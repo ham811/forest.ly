@@ -24,7 +24,14 @@ def app():
 
     m = leafmap.Map(locate_control=True)
     m.add_basemap("ROADMAP")
-    m.add(filepath)
+    m.add_heatmap(
+        filepath,
+        latitude="latitude",
+        longitude="longitude",
+        value="",
+        name="Heatmap",
+        radius=20,
+    )
     m.to_streamlit(height=700)
 
 
