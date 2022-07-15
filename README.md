@@ -2,7 +2,7 @@
 
 This repo for handling GeoIT and Geospatial data for forest.ly project
 
-##Aim
+#Aim
 
 - Data Visualisation
 - Spatio-Temproral change computation
@@ -11,4 +11,4 @@ This repo for handling GeoIT and Geospatial data for forest.ly project
 
 ## Materials and methods
 
-We ara aware that some data are referenced to USGS, ESA, Google Earth and other geospatial data providers
+- We ara aware that some data are referenced to USGS, ESA, Google Earth and other geospatial data providers
