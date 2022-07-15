@@ -79,7 +79,7 @@ def app():
                                 "Select a column to apply random colors", column_names
                             )
 
-                    m = leafmap.Map(center=(40, 12))
+                    m = leafmap.Map(center=(50, 10))
                     # m = leafmap.Map(center=(lat, lon))
                     m.add_gdf(gdf, random_color_column=random_column)
                     st.pydeck_chart(m)
