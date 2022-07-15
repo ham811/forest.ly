@@ -36,13 +36,13 @@ with st.sidebar:
     st.sidebar.title("About")
     st.sidebar.info(
         """
-        This web is made to Monitor the Geospatial and environmental factors in Morocco.
+        This web is made to Monitor the Geospatial and environmental factors Worldwide.
 
-        *This analysis will complement CLASP’s ongoing efforts on
+        This analysis will complement CLASP’s ongoing efforts on
         region/county selection and inform a robust, data driven
         prioritization process.
 
-        More menu infos? please visit!: [GeoMID](https://ham811.github.io/streamli_app/)
+        More menu infos? please visit!: [forest.ly](https://ham811.github.io/forest.ly/)
     """
     )
 
