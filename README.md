@@ -2,7 +2,7 @@
 
 This repo for handling GeoIT and Geospatial data for forest.ly project
 
-#Aim
+## Aim
 
 - Data Visualisation
 - Spatio-Temproral change computation
