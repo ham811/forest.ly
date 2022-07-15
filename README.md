@@ -1,6 +1,6 @@
 # forest.ly
 
-This repo for handling GeoIT and Geospatial data for forest.ly project
+This repo for handling GeoIT and Geospatial data for [forest.ly](https://forest.ly/) project
 
 ## Aim
 
