@@ -20,17 +20,9 @@ def app():
 
     """
     )
-    filepath = "https://raw.githubusercontent.com/ham811/forest.ly/main/data/forestly_1.json"
 
     m = leafmap.Map(locate_control=True)
-    m.add_heatmap(
-        filepath,
-        latitude="latitude",
-        longitude="longitude",
-        value="",
-        name="Heatmap",
-        radius=20,
-    )
+    m.add_basemap("ROADMAP")
     m.to_streamlit(height=700)
 
 
