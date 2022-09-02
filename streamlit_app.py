@@ -8,10 +8,10 @@ st.set_page_config(page_title="GeoIT App", layout="wide")
 # More icons can be found here: https://icons.getbootstrap.com
 
 apps = [
-    {"func": home.app, "title": "Home", "icon": "house"},
-    {"func": heatmap.app, "title": "Heatmap", "icon": "map"},
-    {"func": upload.app, "title": "Upload", "icon": "cloud-upload"},
-    {"func": split.app, "title": "ESA WorldCover", "icon": "map"},
+    {"func": home.app, "title": "Home", "icon": "🏡"},
+    {"func": heatmap.app, "title": "Heatmap", "icon": "🗺️"},
+    {"func": upload.app, "title": "Upload", "icon": "📤"},
+    {"func": split.app, "title": "ESA WorldCover", "icon": "🌳"},
 ]
 
 titles = [app["title"] for app in apps]
