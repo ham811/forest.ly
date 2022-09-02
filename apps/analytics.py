@@ -42,7 +42,7 @@ def app() -> pd.DataFrame:
     st.header('Plot of Data')
     
     fig, ax = plt.subplots(1,1)
-    ax.scatter(x=df['City'], y=df['population'])
+    ax.scatter(x=df['city'], y=df['population'])
     ax.set_xlabel('City')
     ax.set_ylabel('Heatmap')
     
