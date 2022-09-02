@@ -19,10 +19,6 @@ import pandas as pd
 import geopandas as gpd 
 
 
-import matplotlib.pyplot as plt
-import plotly_express as px 
-
-
 
 def create_address_col(df):
     st.sidebar.title("Select Address columns")
