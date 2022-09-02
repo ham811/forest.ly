@@ -11,7 +11,7 @@ apps = [
     {"func": home.app, "title": "Home", "icon": "house"},
     {"func": heatmap.app, "title": "Heatmap", "icon": "map"},
     {"func": upload.app, "title": "Upload", "icon": "cloud-upload"},
-    {"func": split.app, "title": "ESA WorldCover", "icon": "forest"},
+    {"func": split.app, "title": "ESA WorldCover", "icon": "tree"},
 ]
 
 titles = [app["title"] for app in apps]
