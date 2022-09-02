@@ -24,7 +24,7 @@ def app() -> pd.DataFrame:
     upload_file = 'https://raw.githubusercontent.com/ham811/forest.ly/main/data/precip_berlin.csv'
     # Add a title and intro text
     st.title('Earthquake Data Explorer')
-    st.text('This is a web app to allow exploration of Earthquake Data')
+    st.text('This is a web app to allow exploration of Forest Features')
     # If it has then do the following:
 
     # Read the file to a dataframe using pandas
@@ -42,7 +42,7 @@ def app() -> pd.DataFrame:
     st.header('Plot of Data')
     
     fig, ax = plt.subplots(1,1)
-    ax.scatter(x=df['Year'], y=df['Month'])
+    ax.scatter(x=df['Year'], y=df[df.head()])
     ax.set_xlabel('Date')
     ax.set_ylabel('Value')
     
