@@ -7,7 +7,7 @@ def app():
 
     st.markdown(
         """
-    This MorGis will utilize data
+    [Forestly](https://forest.ly/) will utilize data
     analytics such as large-scale simulations and scenario
     analysis to inform decisions such as region/county
     selection, agricultural value chains and technology
