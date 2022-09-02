@@ -21,20 +21,16 @@ def app():
 
     # Add Earth Engine dataset
     dem = ee.Image("USGS/SRTMGL1_003")
-    landsat7 = ee.Image("MODIS/006/MOD13Q1").select(
-        'NDVI'
+    landsat7 = ee.Image("LE7_TOA_5YEAR/1999_2003").select(
+        ["B1", "B2", "B3", "B4", "B5", "B7"]
     )
-    states = region= ee.FeatureCollection('FAO/GAUL/2015/level1').filter(ee.Filter.eq('ADM0_NAME', 'Germany')) 
+    states = ee.FeatureCollection("TIGER/2018/States")
 
     # Set visualization parameters.
     dem_vis = {
         "min": 0,
-        "max": 1.0,
-        "palette": [
-        'FFFFFF', 'CE7E45', 'DF923D', 'F1B555', 'FCD163', '99B718', '74A901',
-        '66A000', '529400', '3E8601', '207401', '056201', '004C00', '023B01',
-        '012E01', '011D01', '011301'
-        ],
+        "max": 4000,
+        "palette": ["006633", "E5FFCC", "662A00", "D8D8D8", "F5F5F5"],
     }
 
     landsat7_vis = {"bands": ["B4", "B3", "B2"], "min": 20, "max": 200, "gamma": 2.0}
@@ -42,8 +38,8 @@ def app():
     layer = layer.strip()
     if layer == "SRTM DEM":
         Map.addLayer(dem, dem_vis, "SRTM DEM", True, opacity)
-    elif layer == "Modis NDVI":
-        Map.addLayer(landsat7, landsat7_vis, "Modis NDVI", True, opacity)
+    elif layer == "Landsat":
+        Map.addLayer(landsat7, landsat7_vis, "Landsat", True, opacity)
     elif layer == "US Census":
         Map.addLayer(states, {}, "US Census", True, opacity)
 
