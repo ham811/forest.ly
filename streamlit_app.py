@@ -1,6 +1,6 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
-from apps import home, heatmap, upload, app # import your app modules here
+from apps import home, heatmap, upload, app, split # import your app modules here
 
 st.set_page_config(page_title="GeoIT App", layout="wide")
 
@@ -11,6 +11,7 @@ apps = [
     {"func": home.app, "title": "Home", "icon": "house"},
     {"func": heatmap.app, "title": "Heatmap", "icon": "map"},
     {"func": upload.app, "title": "Upload", "icon": "cloud-upload"},
+    {"func": split.app, "title": "ESA WorldCover", "icon": "map"},
 ]
 
 titles = [app["title"] for app in apps]
