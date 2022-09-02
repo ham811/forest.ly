@@ -46,7 +46,7 @@ def app() -> pd.DataFrame:
     ax.set_xlabel('City')
     ax.set_ylabel('Heatmap')
     
-    st.line_chart(fig)
+    st.pyplot(fig)
 
 # # read csv from a URL
 # @st.cache
