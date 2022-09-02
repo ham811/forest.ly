@@ -18,4 +18,7 @@ protobuf
 click==8
 leafmap
 seaborn
+ee
+geemap.folium
+streamlit
 
