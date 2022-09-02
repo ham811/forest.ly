@@ -42,7 +42,7 @@ def app() -> pd.DataFrame:
     st.header('Plot of Data')
     
     fig, ax = plt.subplots(1,1)
-    ax.scatter(x=df['Year'], y=df[df.head()])
+    ax.scatter(x=df['Year'], y=df.head())
     ax.set_xlabel('Date')
     ax.set_ylabel('Value')
     
