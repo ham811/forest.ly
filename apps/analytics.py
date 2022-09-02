@@ -21,7 +21,7 @@ import matplotlib.pyplot as plt
 def app() -> pd.DataFrame:
 
     # Create file uploader object
-    upload_file = 'https://raw.githubusercontent.com/ham811/forest.ly/main/data/precip_berlin.csv'
+    upload_file = 'https://raw.githubusercontent.com/ham811/forest.ly/main/data/de.csv'
     # Add a title and intro text
     st.title('Earthquake Data Explorer')
     st.text('This is a web app to allow exploration of Forest Features')
@@ -42,9 +42,9 @@ def app() -> pd.DataFrame:
     st.header('Plot of Data')
     
     fig, ax = plt.subplots(1,1)
-    ax.scatter(x=df['Year'], y=df.head())
-    ax.set_xlabel('Date')
-    ax.set_ylabel('Value')
+    ax.scatter(x=df['Year'], y=df['population'])
+    ax.set_xlabel('City')
+    ax.set_ylabel('Heatmap')
     
     st.pyplot(fig)
 
