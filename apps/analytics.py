@@ -42,11 +42,11 @@ def app() -> pd.DataFrame:
     st.header('Plot of Data')
     
     fig, ax = plt.subplots(1,1)
-    ax.scatter(x=df['Year'], y=df['population'])
+    ax.scatter(x=df['City'], y=df['population'])
     ax.set_xlabel('City')
     ax.set_ylabel('Heatmap')
     
-    st.pyplot(fig)
+    st.line_chart(fig)
 
 # # read csv from a URL
 # @st.cache
