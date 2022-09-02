@@ -1,21 +1,50 @@
-import streamlit as st 
-import pandas as pd
-import matplotlib
-import matplotlib.pyplot as plt
-import os
-from matplotlib.backends.backend_agg import RendererAgg
+import ee
+import streamlit as st
+import geemap.foliumap as geemap
 
 
-#Loading the data
-@st.cache
-def get_data_deputies():
-     return pd.read_csv(os.path.join(os.getcwd(),'precip_berlin.csv'))
+def app():
 
-dataset_url = "https://raw.githubusercontent.com/ham811/forest.ly/main/data/precip_berlin.csv"
+    st.title("Change layer opacity")
 
-# read csv from a URL
-@st.experimental_memo
-def app() -> pd.DataFrame:
-    return pd.read_csv(dataset_url)
+    col1, _, col2, _ = st.columns([1, 0.3, 2, 2])
 
-df = app()
+    with col1:
+        layer = st.selectbox("Select a layer", ["SRTM DEM", "Landsat", "US Census"])
+
+    with col2:
+        opacity = st.slider(
+            "Opacity", min_value=0.0, max_value=1.0, value=0.8, step=0.05
+        )
+
+    Map = geemap.Map()
+
+    # Add Earth Engine dataset
+    dem = ee.Image("USGS/SRTMGL1_003")
+    landsat7 = ee.Image("MODIS/006/MOD13Q1").select(
+        'NDVI'
+    )
+    states = region= ee.FeatureCollection('FAO/GAUL/2015/level1').filter(ee.Filter.eq('ADM0_NAME', 'Germany')) 
+
+    # Set visualization parameters.
+    dem_vis = {
+        "min": 0,
+        "max": 1.0,
+        "palette": [
+        'FFFFFF', 'CE7E45', 'DF923D', 'F1B555', 'FCD163', '99B718', '74A901',
+        '66A000', '529400', '3E8601', '207401', '056201', '004C00', '023B01',
+        '012E01', '011D01', '011301'
+        ],
+    }
+
+    landsat7_vis = {"bands": ["B4", "B3", "B2"], "min": 20, "max": 200, "gamma": 2.0}
+
+    layer = layer.strip()
+    if layer == "SRTM DEM":
+        Map.addLayer(dem, dem_vis, "SRTM DEM", True, opacity)
+    elif layer == "Modis NDVI":
+        Map.addLayer(landsat7, landsat7_vis, "Modis NDVI", True, opacity)
+    elif layer == "US Census":
+        Map.addLayer(states, {}, "US Census", True, opacity)
+
+    Map.to_streamlit()
