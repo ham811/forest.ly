@@ -13,15 +13,18 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# Add a title and intro text
-st.title('Earthquake Data Explorer')
-st.text('This is a web app to allow exploration of Earthquake Data')
 
-# Create file uploader object
-upload_file = 'https://raw.githubusercontent.com/ham811/forest.ly/main/data/precip_berlin.csv'
+
+
 
 # Check to see if a file has been uploaded
 def app() -> pd.DataFrame:
+
+    # Create file uploader object
+    upload_file = 'https://raw.githubusercontent.com/ham811/forest.ly/main/data/precip_berlin.csv'
+    # Add a title and intro text
+    st.title('Earthquake Data Explorer')
+    st.text('This is a web app to allow exploration of Earthquake Data')
     # If it has then do the following:
 
     # Read the file to a dataframe using pandas
