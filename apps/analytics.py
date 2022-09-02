@@ -21,7 +21,7 @@ st.text('This is a web app to allow exploration of Earthquake Data')
 upload_file = 'https://raw.githubusercontent.com/ham811/forest.ly/main/data/precip_berlin.csv'
 
 # Check to see if a file has been uploaded
-if upload_file is not None:
+def app() -> pd.DataFrame:
     # If it has then do the following:
 
     # Read the file to a dataframe using pandas
